@@ -1,0 +1,35 @@
+<div class="card mt-2">
+  <div class="card-body">
+
+    <h3 class="card-title">Heroes List</h3>
+
+    <div class="row">
+      <div class="col-6">
+        <div *ngIf="this.deletedHero; else nothingWasDeleted">
+          <h5>Heroe deleted <small class="text-danger">{{ this.deletedHero }}</small></h5>
+        </div>
+
+        <ng-template #nothingWasDeleted>
+          <h5>Nothing deleted</h5>
+        </ng-template>
+      </div>
+      <div class="col-6 text-end">
+        <button
+          *ngIf="this.heroeNames.length > 0"
+          (click)="this.removeLastHero()"
+          class="btn btn-outline-danger">
+          Delete Last hero
+        </button>
+      </div>
+    </div>
+
+
+    <ul class="mt-2 list-group">
+      <li
+        *ngFor="let name of this.heroeNames"
+        class="list-group-item">
+          {{ name }}
+      </li>
+    </ul>
+  </div>
+</div>

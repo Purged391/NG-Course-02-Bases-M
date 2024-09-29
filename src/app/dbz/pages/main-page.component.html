@@ -1,0 +1,21 @@
+<div class="card my-2">
+  <div class="card-body">
+    <h3>DBZ Characters</h3>
+    <hr>
+
+    <div class="row">
+      <div class="col">
+        <app-dbz-list
+        [characterList]="characters"
+        (onDeleteId)="onDeleteCharacter($event)"
+        ></app-dbz-list>
+      </div>
+      <div class="col">
+        <app-dbz-add-character
+        (onNewCharacter)="onNewCharacter($event)"
+        ></app-dbz-add-character>
+      </div>
+    </div>
+
+  </div>
+</div>

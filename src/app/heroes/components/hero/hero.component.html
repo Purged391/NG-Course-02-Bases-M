@@ -1,0 +1,39 @@
+<div class="card mt-2">
+  <div class="card-body">
+    <h3 class="card-title">Angular TypeScript Logic</h3>
+    <h5>Hero: {{ name | titlecase }}</h5>
+
+    <dl>
+      <td>Name</td>
+      <dd> {{ name }}</dd>
+      <td>Age</td>
+      <dd> {{ age }}</dd>
+      <td>Description</td>
+      <dd> {{ getHeroDescription() }}</dd>
+      <td>Capitalized</td>
+      <dd> {{ name }}</dd>
+    </dl>
+
+
+    <button
+      *ngIf="this.name !== 'Capitan America'"
+      class="btn btn-primary mx-2"
+      (click)="this.changeHero()">
+      Change Name
+    </button>
+
+    <button
+      *ngIf="this.age !== 37"
+      class="btn btn-primary mx-2"
+      (click)="this.changeAge()">
+      Change Age
+    </button>
+
+    <button
+      class="btn btn-primary mx-2"
+      (click)="this.resetForm()">
+      Reset
+    </button>
+  </div>
+</div>
+
